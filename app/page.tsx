@@ -63,6 +63,7 @@ const issueCards = [
   }
 ];
 export default function Home() {
+  
   return (
     <div className="relative overflow-hidden">
       {/* Hero Section - Exact match to Figma */}
