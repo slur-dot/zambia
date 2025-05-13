@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 const issueCards = [
   {
     number: "01",
@@ -63,7 +66,28 @@ const issueCards = [
   }
 ];
 export default function Home() {
-  
+  const sliderRef = useRef<any>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const totalWidth = sliderRef.current.scrollWidth / 2;
+
+      gsap.to(sliderRef.current, {
+        x: `-=${totalWidth}`,
+        duration: 30,
+        ease: 'linear',
+        repeat: -1,
+        modifiers: {
+          x: gsap.utils.unitize(x => parseFloat(x) % totalWidth), // Wrap-around effect
+        },
+      });
+    }, sliderRef);
+
+    return () => ctx.revert(); // cleanup
+  }, []);
+
+  // Duplicate cards for seamless loop
+  const loopedCards = [...issueCards, ...issueCards];
   return (
     <div className="relative overflow-hidden">
       {/* Hero Section - Exact match to Figma */}
@@ -126,22 +150,27 @@ export default function Home() {
       </section>
 
       {/* Key Issues Section - Exact match to Figma */}
-      <section className="relative z-10 py-8 bg-[#ffd7c2] overflow-x-auto">
+      <section className="relative z-10 py-8 bg-[#ffd7c2] overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 min-w-[1000px] lg:min-w-0">
-            {issueCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-[#fbddcc] rounded-lg pt-4 px-4 pb-8 border-2 border-black flex flex-col h-[280px]"
-              >
-                <div className="text-[#c83434] text-xl font-bold mb-1">{card.number}</div>
-                <h3 className="font-bold text-black text-sm leading-tight mb-2">{card.title}</h3>
-                <div className="flex-grow flex flex-col justify-between">
-                  <p className="text-[#f97d39] text-xs mb-2">{card.problem}</p>
-                  <p className="text-black text-xs mb-6">{card.solution}</p>
+          <div className="overflow-hidden">
+            <div
+              ref={sliderRef}
+              className="flex gap-4 w-max"
+            >
+              {loopedCards.map((card, index) => (
+                <div
+                  key={index}
+                  className="bg-[#fbddcc] rounded-lg pt-4 px-4 pb-8 border-2 border-black flex flex-col h-[280px] min-w-[200px]"
+                >
+                  <div className="text-[#c83434] text-xl font-bold mb-1">{card.number}</div>
+                  <h3 className="font-bold text-black text-sm leading-tight mb-2">{card.title}</h3>
+                  <div className="flex-grow flex flex-col justify-between">
+                    <p className="text-[#f97d39] text-xs mb-2">{card.problem}</p>
+                    <p className="text-black text-xs mb-6">{card.solution}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -165,7 +194,7 @@ export default function Home() {
               <div className="uppercase text-gray-600 text-xs sm:text-sm mt-2 pt-2 border-t border-gray-300 inline-block px-4">
                 VISITS
               </div>
-            </div>      
+            </div>
           </div>
         </div>
       </section>
