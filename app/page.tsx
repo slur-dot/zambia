@@ -1,53 +1,68 @@
 import Image from "next/image"
 import Link from "next/link"
-
+const issueCards = [
+  {
+    number: "01",
+    title: "Revise The Number Of Constituencies And Wards",
+    problem: "Problem: Constituencies Are Too Large, Resulting In Unequal Resource Distribution.",
+    solution: "Solution: Redrawing Boundaries Increases Equity And CDF Access.",
+  },
+  {
+    number: "02",
+    title: "Revise Nomination Provisions For Resigned Candidates",
+    problem: "Problem: Candidates Resign After Nomination And Rejoin Shortly After.",
+    solution: "Solution: Clear Guidelines Will Improve Fairness And Reduce Manipulation.",
+  },
+  {
+    number: "03",
+    title: "Enhance Representation Of Women, Youths & Persons With Disabilities",
+    problem: "Problem: Inadequate Representation In Decision Making.",
+    solution: "Solution: Legal Quotas And Reserved Seats Improve Equity.",
+  },
+  {
+    number: "04",
+    title: "Include MPs In Local Councils",
+    problem: "Problem: MPs Lack Formal Ties To Local Councils.",
+    solution: "Solution: Including Them Improves Coordination And Service Delivery.",
+  },
+  {
+    number: "05",
+    title: "Specify Timelines For Election Petition Determinations",
+    problem: "Problem: Delayed Petitions Undermine Electoral Justice.",
+    solution: "Solution: Enforced Timelines Protect Electoral Integrity.",
+  },
+  {
+    number: "06",
+    title: "Revise By-Election Provisions",
+    problem: "Problem: Frequent By-Elections Are Costly.",
+    solution: "Solution: Limit Causes For By-Elections To Emergencies Only.",
+  },
+  {
+    number: "07",
+    title: "Revise Number Of Nominated MPs",
+    problem: "Problem: Current Process Lacks Transparency.",
+    solution: "Solution: Reduce Number And Define Clear Nomination Criteria.",
+  },
+  {
+    number: "08",
+    title: "Harmonize Term Of Office For MPs",
+    problem: "Problem: Conflicting Timelines Between Constitution And Elections.",
+    solution: "Solution: Set Consistent 5-Year Term For MPs.",
+  },
+  {
+    number: "09",
+    title: "Ministerial Vacancy 90 Days Before Elections",
+    problem: "Problem: Ministers Resign Early, Creating Power Gaps.",
+    solution: "Solution: Allow Continued Service Until Handover.",
+  },
+  {
+    number: "10",
+    title: "Remove Mayoral Term Limits",
+    problem: "Problem: Term Limit Applies Only To Mayors, Not Councillors.",
+    solution: "Solution: Equal Terms For All Political Offices.",
+  }
+];
 export default function Home() {
-  // Array of 7 cards with correct content from the Figma design
-  const issueCards = [
-    {
-      number: "01",
-      title: "Revise The Number Of Constituencies And Wards",
-      problem: "Problem: Constituencies Are Too Large, Resulting In Unequal Resource Distribution.",
-      solution: "Solution: Redrawing Boundaries Increases Equity And CDF Access.",
-    },
-    {
-      number: "02",
-      title: "Revise Nomination Provisions For Resigned Candidates",
-      problem: "Problem: Candidates Resign After Nomination And Rejoin Shortly After.",
-      solution: "Solution: Clear Guidelines Will Improve Fairness And Reduce Manipulation.",
-    },
-    {
-      number: "03",
-      title: "Enhance Representation Of Women, Youths & Persons With Disabilities",
-      problem: "Problem: Inadequate Representation In Decision Making.",
-      solution: "Solution: Legal Quotas And Reserved Seats Improve Equity.",
-    },
-    {
-      number: "04",
-      title: "Include MPs In Local Councils",
-      problem: "Problem: MPs Lack Formal Ties To Local Councils.",
-      solution: "Solution: Including Them Improves Coordination And Service Delivery.",
-    },
-    {
-      number: "05",
-      title: "Specify Timelines For Election Petition Determinations",
-      problem: "Problem: Delayed Petitions Undermine Electoral Justice.",
-      solution: "Solution: Enforced Timelines Protect Electoral Integrity.",
-    },
-    {
-      number: "06",
-      title: "Revise By-Election Provisions",
-      problem: "Problem: Frequent By-Elections Are Costly.",
-      solution: "Solution: Limit Causes For By-Elections To Emergencies Only.",
-    },
-    {
-      number: "07",
-      title: "Revise Number Of Nominated MPs",
-      problem: "Problem: Current Process Lacks Transparency.",
-      solution: "Solution: Reduce Number And Define Clear Nomination Criteria.",
-    },
-  ]
-
   return (
     <div className="relative overflow-hidden">
       {/* Hero Section - Exact match to Figma */}

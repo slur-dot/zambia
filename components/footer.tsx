@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="mb-4">
               <h3 className="font-bold mb-2">Supported by:</h3>
               <div className="bg-white p-2 rounded inline-block">
-                <Image src="/images/ppd-logo.png" alt="PPD Logo" width={120} height={40} />
+                <Image src="contactus.png" alt="PPD Logo" width={120} height={40} />
               </div>
             </div>
           </div>
@@ -35,8 +35,8 @@ const Footer = () => {
                 <div className="w-6 h-6 mr-2 flex items-center justify-center">
                   <Image src="/images/email-icon.png" alt="Email" width={20} height={20} className="invert" />
                 </div>
-                <a href="mailto:info@portal.org.zm" className="hover:underline">
-                  info@portal.org.zm
+                <a href="mailto:info@ppdf.org.zm" className="hover:underline">
+                info@ppdf.org.zm
                 </a>
               </li>
               <li className="flex items-center">

@@ -70,7 +70,7 @@ export default function ContactUs() {
             <div className="mb-8">
               <h3 className="font-bold mb-2">Supported by:</h3>
               <div className="bg-white p-2 rounded inline-block">
-                <Image src="/images/ppd-logo.png" alt="PPD Logo" width={120} height={40} />
+                <Image src="contactus.png" alt="PPD Logo" width={120} height={40} />
               </div>
             </div>
 
