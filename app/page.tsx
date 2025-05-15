@@ -163,10 +163,10 @@ export default function Home() {
                   className="bg-[#fbddcc] rounded-lg pt-4 px-4 pb-8 border-2 border-black flex flex-col h-[280px] min-w-[200px]"
                 >
                   <div className="text-[#c83434] text-xl font-bold mb-1">{card.number}</div>
-                  <h3 className="font-bold text-black text-sm leading-tight mb-2">{card.title}</h3>
+                  <h3 className="font-bold text-black text-md leading-tight mb-2">{card.title}</h3>
                   <div className="flex-grow flex flex-col justify-between">
-                    <p className="text-[#f97d39] text-xs mb-2">{card.problem}</p>
-                    <p className="text-black text-xs mb-6">{card.solution}</p>
+                    <p className="font-bold text-red-500 text-s mb-2">{card.problem}</p>
+                    <p className="text-green-dark font-bold text-xs mb-6">{card.solution}</p>
                   </div>
                 </div>
               ))}
@@ -179,7 +179,7 @@ export default function Home() {
       <section className="relative z-10 py-16 bg-[#ffd7c2]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div className="text-center hidden">
               <div className="text-[#c83434] text-[40px] sm:text-[64px] md:text-[80px] font-bold leading-none">
                 0
               </div>
@@ -187,7 +187,7 @@ export default function Home() {
                 SUBMISSIONS
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-center hidden">
               <div className="text-[#c83434] text-[40px] sm:text-[64px] md:text-[80px] font-bold leading-none">
                 0
               </div>
